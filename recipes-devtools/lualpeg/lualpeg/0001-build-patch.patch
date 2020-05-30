@@ -1,0 +1,21 @@
+diff -ruN a/makefile b/makefile
+--- a/makefile	2019-03-11 15:08:29.000000000 +0100
++++ b/makefile	2020-05-30 07:04:44.940068581 +0200
+@@ -1,5 +1,5 @@
+ LIBNAME = lpeg
+-LUADIR = ../lua/
++LUADIR ?= ../lua/
+ 
+ COPT = -O2 -DNDEBUG
+ # COPT = -g
+@@ -22,8 +22,8 @@
+ # -Wunreachable-code \
+ 
+ 
+-CFLAGS = $(CWARNS) $(COPT) -std=c99 -I$(LUADIR) -fPIC
+-CC = gcc
++CFLAGS ?= $(CWARNS) $(COPT) -std=c99 -I$(LUADIR) -fPIC
++CC ?= gcc
+ 
+ FILES = lpvm.o lpcap.o lptree.o lpcode.o lpprint.o
+ 
