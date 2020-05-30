@@ -1,0 +1,68 @@
+diff -ruN a/config b/config
+--- a/config	2020-05-27 10:43:13.283287611 +0200
++++ b/config	2020-05-30 06:26:48.935110963 +0200
+@@ -5,14 +5,14 @@
+ MODULE=luasnmp
+ 
+ # Lua Version to use:
+-LV = 5.3
++LV ?= 5.3
+ V = $(subst .,,$(LV))
+ 
+ # Debugging 1 or 0
+ DEBUG = 0
+ 
+ # Root of Lua Installation
+-INSTALL_ROOT=/usr/local
++INSTALL_ROOT?=/usr/local
+ INSTALL_SHARE=$(INSTALL_ROOT)/share/lua/$(LV)
+ INSTALL_LIB=$(INSTALL_ROOT)/lib/lua/$(LV)
+ INSTALL_DOC=$(INSTALL_ROOT)/share/doc/$(MODULE)
+@@ -21,7 +21,7 @@
+ INSTALL = install -p
+ INSTALL_EXEC = $(INSTALL) -m 0755
+ INSTALL_DATA = $(INSTALL) -m 0644
+-INSTALL_COPY = cp -p -r
++INSTALL_COPY = cp -r
+ 
+ # == YOU PROBABLY DO NOT NEED TO CHANGE ANYTHING BELOW  =======================
+ 
+@@ -56,12 +56,12 @@
+     endif
+   else
+     # Lua installation
+-    LUA = /usr
++    LUA ?= /usr
+     LUAINC=$(LUA)/include/lua$(LV)
+     LUABIN=$(LUA)/bin/lua$(LV)
+     LUALIB=$(LUA)/lib
+     EXT = so
+-    LIBS=
++    LIBS= -llua
+   endif
+ endif
+ 
+@@ -79,19 +79,19 @@
+ # Compiler and Linker
+ DEF = -DUSE_SNMPTRAPD $(DEFCOMPAT) -DVERSION='"$(VERSION)"' -DSYSTEM='"$(SYSTEM)"' $(PLATFORM)
+ NETSNMP_DEF =
+-CC = gcc
++#CC = gcc
+ ifeq ($(DEBUG), 1)
+   CFLAGS = $(DEF) $(shell net-snmp-config --cflags) -I$(LUAINC) -fPIC -Wall -ggdb
+ else
+-  CFLAGS = $(DEF) $(shell net-snmp-config --cflags) -I$(LUAINC) -fPIC -Wall -O2
++  CFLAGS += $(DEF) $(shell net-snmp-config --cflags) -I$(LUAINC) -fPIC -Wall -O2
+ endif
+ ifeq (Darwin, $(SYSTEM))
+   LDFLAGS= $(OPT) -dynamiclib -undefined dynamic_lookup -L$(LUALIB)
+ else
+-  LDFLAGS = $(shell net-snmp-config --ldflags) -O -shared -fPIC
++  LDFLAGS += $(shell net-snmp-config --ldflags) -O -shared -fPIC
+ endif
+ LIBS += $(shell net-snmp-config --libs) -lcrypto
+-LD = gcc
++LD = $(CC)
+ 
+ # Distribution stuff
+ EXPORTDIR = $(HOME)/exports
