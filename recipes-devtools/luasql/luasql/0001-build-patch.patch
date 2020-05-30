@@ -1,0 +1,13 @@
+diff -ruN a/config b/config
+--- a/config	2020-05-26 11:13:05.403821339 +0200
++++ b/config	2020-05-30 05:10:58.097181805 +0200
+@@ -49,6 +49,6 @@
+ WARN = -Wall -Wmissing-prototypes -Wmissing-declarations -pedantic
+ INCS = -I$(LUA_INC)
+ DEFS =
+-CFLAGS = -O2 -std=gnu99 $(WARN) -fPIC $(DRIVER_INCS) $(INCS) \
+-         -DLUASQL_VERSION_NUMBER='"$V"' $(DEFS)
+-CC= gcc
++#CFLAGS = -O2 -std=gnu99 $(WARN) -fPIC $(DRIVER_INCS) $(INCS) \
++#         -DLUASQL_VERSION_NUMBER='"$V"' $(DEFS)
++#CC= gcc
