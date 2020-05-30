@@ -1,0 +1,11 @@
+diff -ruN c/src/common.h d/src/common.h
+--- c/src/common.h	2020-05-30 04:18:40.818457422 +0200
++++ d/src/common.h	2020-05-30 04:26:23.200963618 +0200
+@@ -117,6 +117,7 @@
+ #ifndef luaL_checkint
+ #define luaL_checkint(L,n)	((int)luaL_checkinteger(L, (n)))
+ #define luaL_optint(L,n,d)	((int)luaL_optinteger(L, (n), (d)))
++#define luaL_optlong(L,n,d)	((long)luaL_optinteger(L, (n), (d)))
+ #endif
+ 
+ 

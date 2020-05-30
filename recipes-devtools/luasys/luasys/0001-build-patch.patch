@@ -1,0 +1,44 @@
+diff -ruN a/src/Makefile b/src/Makefile
+--- a/src/Makefile	2020-05-27 12:31:15.122273559 +0200
++++ b/src/Makefile	2020-05-30 04:41:38.366090072 +0200
+@@ -1,7 +1,7 @@
+ 
+ PLAT= none
+ 
+-LUA= /opt/lua-5.2.3
++#LUA= /opt/lua-5.2.3
+ 
+ T= sys.so
+ A= libluasys.a
+@@ -25,17 +25,17 @@
+ 	-Wpadded \
+ #	-Wunreachable-code
+ 
+-CFLAGS= $(COPT) $(CWARNS) $(MYCFLAGS) -I$(LUA)/src
+-LIBS= -lpthread $(MYLIBS)
++#CFLAGS= $(COPT) $(CWARNS) $(MYCFLAGS) -I$(LUA)/src
++LIBS= -lpthread -llua $(MYLIBS)
+ 
+ MYCFLAGS=
+ MYLDFLAGS= -shared -Bdynamic
+ MYLIBS=
+ 
+-CC= gcc
++#CC= gcc
+ MAKE_DLL= $(CC) $(MYLDFLAGS) -o
+-AR= ar rcu
+-RANLIB= ranlib
++#AR= ar rcu
++#RANLIB= ranlib
+ RM= rm -f
+ STRIP= strip
+ 
+@@ -67,7 +67,7 @@
+ 
+ $(T): $(OBJS)
+ 	$(MAKE_DLL) $@ $(LDOBJS) $(LIBS)
+-	$(STRIP) $@
++#	$(STRIP) $@
+ 
+ $(A): $(OBJS)
+ 	$(AR) $@ $?
