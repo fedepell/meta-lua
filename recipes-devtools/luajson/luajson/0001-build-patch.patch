@@ -1,0 +1,28 @@
+diff -ruN a/Makefile b/Makefile
+--- a/Makefile	2020-05-28 10:29:34.524333509 +0200
++++ b/Makefile	2020-05-28 11:25:31.832443610 +0200
+@@ -5,6 +5,7 @@
+ DISTOPS= dist distclean dist-all dist-bzip2 dist-gzip dist-tar dist-zip
+ .PHONY: all clean check $(DISTOPS) distcheck install
+ 
++LUA_V?=5.1
+ LUA_BIN=lua
+ LUNIT_BIN=lunit
+ VERSION=luajson-$(shell git describe --abbrev=4 HEAD 2>/dev/null)
+@@ -13,8 +14,8 @@
+ PREFIX ?= /usr/local
+ INSTALL_TOP= $(PREFIX)
+ 
+-INSTALL_LMOD= $(INSTALL_TOP)/share/lua/5.1
+-INSTALL_CMOD= $(INSTALL_TOP)/lib/lua/5.1
++INSTALL_LMOD= $(INSTALL_TOP)/share/lua/${LUA_V}
++INSTALL_CMOD= $(INSTALL_TOP)/lib/lua/${LUA_V}
+ 
+ all:
+ 	@echo Building nothing - no binaries
+@@ -53,4 +54,4 @@
+ 
+ install:
+ 	$(MKDIR) $(DESTDIR)$(INSTALL_LMOD)
+-	cp -p -r lua/* $(DESTDIR)$(INSTALL_LMOD)
++	cp -r lua/* $(DESTDIR)$(INSTALL_LMOD)
