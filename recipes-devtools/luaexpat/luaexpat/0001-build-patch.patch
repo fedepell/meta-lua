@@ -1,0 +1,12 @@
+diff -ruN a/makefile b/makefile
+--- a/makefile	2020-05-27 11:45:04.547192183 +0200
++++ b/makefile	2020-05-27 11:41:35.541675482 +0200
+@@ -9,7 +9,7 @@
+ T		= lxp
+ LIBNAME		= $(T).so
+ 
+-COMMON_CFLAGS	 = -g -pedantic -Wall -O2 -fPIC -DPIC -ansi
++COMMON_CFLAGS	 = -g -pedantic -Wall -O2 -fPIC -DPIC # -ansi
+ LUA_INC		?= -I/usr/include/lua$(LUA_V)
+ EXPAT_INC	?= -I/usr/include
+ CF		 = $(LUA_INC) $(EXPAT_INC) $(COMMON_CFLAGS) $(CFLAGS)
