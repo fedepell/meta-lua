@@ -1,0 +1,38 @@
+diff -ruN a/Makefile b/Makefile
+--- a/Makefile	2020-05-29 09:55:58.868116922 +0200
++++ b/Makefile	2020-05-31 06:25:56.705731605 +0200
+@@ -11,11 +11,11 @@
+ ##                          multi-threaded application. Requries _pthreads_.
+ 
+ ##### Build defaults #####
+-LUA_VERSION =       5.3
++LUA_VERSION ?=       5.3
+ TARGET =            cjson.so
+-PREFIX =            /usr/local
++PREFIX ?=            /usr/local
+ #CFLAGS =            -g -Wall -pedantic -fno-inline
+-CFLAGS =            -O3 -Wall -pedantic -DNDEBUG
++CFLAGS ?=            -O3 -Wall -pedantic -DNDEBUG
+ CJSON_CFLAGS =      -fpic
+ CJSON_LDFLAGS =     -shared
+ LUA_INCLUDE_DIR =   $(PREFIX)/include
+@@ -105,7 +105,7 @@
+ 	chmod $(EXECPERM) $(DESTDIR)/$(LUA_CMODULE_DIR)/$(TARGET)
+ 
+ install-extra:
+-	mkdir -p $(DESTDIR)/$(LUA_MODULE_DIR)/cjson/tests \
++	mkdir -p $(DESTDIR)/$(LUA_MODULE_DIR)/cjson \
+ 		$(DESTDIR)/$(LUA_BIN_DIR)
+ 	cp lua/cjson/util.lua $(DESTDIR)/$(LUA_MODULE_DIR)/cjson
+ 	chmod $(DATAPERM) $(DESTDIR)/$(LUA_MODULE_DIR)/cjson/util.lua
+@@ -113,8 +113,8 @@
+ 	chmod $(EXECPERM) $(DESTDIR)/$(LUA_BIN_DIR)/lua2json$(LUA_BIN_SUFFIX)
+ 	cp lua/json2lua.lua $(DESTDIR)/$(LUA_BIN_DIR)/json2lua$(LUA_BIN_SUFFIX)
+ 	chmod $(EXECPERM) $(DESTDIR)/$(LUA_BIN_DIR)/json2lua$(LUA_BIN_SUFFIX)
+-	cd tests; cp $(TEST_FILES) $(DESTDIR)/$(LUA_MODULE_DIR)/cjson/tests
+-	cd tests; chmod $(DATAPERM) $(TEST_FILES); chmod $(EXECPERM) *.lua *.pl
++	#cd tests; cp $(TEST_FILES) $(DESTDIR)/$(LUA_MODULE_DIR)/cjson/tests
++	#cd tests; chmod $(DATAPERM) $(TEST_FILES); chmod $(EXECPERM) *.lua *.pl
+ 
+ clean:
+ 	rm -f *.o $(TARGET)
