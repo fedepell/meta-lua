@@ -6,10 +6,9 @@ LIC_FILES_CHKSUM = "file://COPYRIGHT;md5=eb20c1e17a9cbfb068bd4d63a5d56544"
 DEPENDS += "lua-native lua"
 
 SRC_URI = "git://github.com/tnodir/luasys.git;branch=master \
-           file://0001-build-patch.patch \
-           file://0002-lua53-compat.patch"
+           file://0001-build-patch.patch"
 
-SRCREV = "8f0c4480fed804ff578c5fb3ddd6ec722e11067d"
+SRCREV = "79e99a450f52b37598d0c29dd736e8c2d071efe2"
 S = "${WORKDIR}/git"
 LUA_VERSION = "5.3"
 
