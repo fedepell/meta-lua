@@ -1,0 +1,29 @@
+diff -ruN a/config b/config
+--- a/config	2020-06-01 07:59:18.032114191 +0200
++++ b/config	2020-06-01 08:08:43.125400027 +0200
+@@ -1,12 +1,12 @@
+ # Installation directories
+ 
+ # Default installation prefix
+-PREFIX=/usr/local
++PREFIX ?= /usr/local
+ 
+-LUA_VERSION = 5.1
++LUA_VERSION ?= 5.1
+ 
+ # System's libraries directory (where binary libraries are installed)
+-LUA_LIBDIR= $(PREFIX)/lib/lua/$(LUA_VERSION)
++LUA_LIBDIR= /lib/lua/$(LUA_VERSION)
+ 
+ # Lua includes directory
+ LUA_INC += -I$(PREFIX)/include
+@@ -22,7 +22,7 @@
+ # Compilation directives
+ WARN= -O2 -Wall -fPIC -W -Waggregate-return -Wcast-align -Wmissing-prototypes -Wnested-externs -Wshadow -Wwrite-strings -pedantic
+ INCS= $(LUA_INC)
+-CFLAGS= $(WARN) $(INCS)
+-CC= gcc
++CFLAGS?= $(WARN) $(INCS)
++CC?= gcc
+ 
+ # $Id: config,v 1.21 2007/10/27 22:42:32 carregal Exp $
