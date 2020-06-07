@@ -1,0 +1,22 @@
+diff -ruN a/Makefile b/Makefile
+--- a/Makefile	2020-05-30 10:58:19.000000000 +0200
++++ b/Makefile	2020-06-07 07:09:35.218577590 +0200
+@@ -7,15 +7,15 @@
+ LUA_DIR= $(PREFIX)/share/lua/5.2
+ 
+ CGILUA_DIR= $(LUA_DIR)/cgilua
+-CGILUA_LUAS= src/cgilua/authentication.lua src/cgilua/cookies.lua src/cgilua/dispatcher.lua src/cgilua/loader.lua src/cgilua/lp.lua src/cgilua/mime.lua src/cgilua/post.lua src/cgilua/readuntil.lua src/cgilua/serialize.lua src/cgilua/session.lua src/cgilua/urlcode.lua
+-ROOT_LUAS= src/cgilua/cgilua.lua
++CGILUA_LUAS= src/cgilua/authentication.lua src/cgilua/cookies.lua src/cgilua/dispatcher.lua src/cgilua/loader.lua src/cgilua/lp.lua src/cgilua/mime.lua src/cgilua/post.lua src/cgilua/readuntil.lua src/cgilua/serialize.lua src/cgilua/session.lua src/cgilua/urlcode.lua src/cgilua/main.lua
++#ROOT_LUAS= src/cgilua/cgilua.lua
+ 
+ all:
+ 
+ install:
+ 	mkdir -p $(CGILUA_DIR)
+ 	cp $(CGILUA_LUAS) $(CGILUA_DIR)
+-	cp $(ROOT_LUAS) $(LUA_DIR)
++	#cp $(ROOT_LUAS) $(LUA_DIR)
+ 
+ clean:
+ 
