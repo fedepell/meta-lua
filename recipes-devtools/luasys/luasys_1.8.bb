@@ -31,3 +31,5 @@ do_install() {
 }
 
 FILES_${PN} = "${libdir}/lua/${LUA_VERSION}/sys.so"
+
+INSANE_SKIP_${PN} += "ldflags"
