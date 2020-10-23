@@ -26,3 +26,6 @@ do_install() {
 }
 
 FILES_${PN} = "${libdir}/lua/${LUA_VERSION}/lfs.so"
+
+INSANE_SKIP_${PN} += "ldflags"
+
