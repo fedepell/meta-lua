@@ -42,3 +42,6 @@ do_install() {
 
 FILES_${PN}-mysql = "${libdir}/lua/${LUA_VERSION}/luasql/mysql.so"
 FILES_${PN}-sqlite3 = "${libdir}/lua/${LUA_VERSION}/luasql/sqlite3.so"
+
+INSANE_SKIP_${PN}-mysql += "ldflags"
+INSANE_SKIP_${PN}-sqlite3 += "ldflags"
