@@ -14,6 +14,7 @@ LUA_VERSION = "5.3"
 
 
 EXTRA_OEMAKE = "LUA_VERSION=${LUA_VERSION} PREFIX=${RECIPE_SYSROOT}/usr DESTDIR=${D}/usr"
+CFLAGS_append = " -fPIC"
 
 do_compile() {
     cd ${S}
