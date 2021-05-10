@@ -23,7 +23,6 @@ do_compile() {
 
 do_install() {
     cd ${S}/src
-    oe_runmake install
     oe_runmake install-unix
 }
 
