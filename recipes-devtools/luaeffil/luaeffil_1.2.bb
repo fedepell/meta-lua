@@ -5,11 +5,12 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=b314c51e3cb765a16b1eaf848e1dd2c5"
 
 DEPENDS += "lua-native lua"
 
-SRC_URI = "gitsm://github.com/effil/effil.git;branch=master;protocol=https"
+SRC_URI = "gitsm://github.com/effil/effil.git;branch=master;protocol=https \
+           file://0001-Lua_5_4_GCC10_patch.diff"
 
 SRCREV = "b3380a78797c2ddea90dea152f9825630c66bca6"
 S = "${WORKDIR}/git"
-LUA_VERSION = "5.3"
+LUA_VERSION = "5.4"
 
 inherit pkgconfig cmake
 
