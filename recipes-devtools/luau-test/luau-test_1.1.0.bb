@@ -9,7 +9,7 @@ SRC_URI = "git://github.com/IUdalov/u-test;branch=master;protocol=https"
 
 SRCREV = "113259fd238ec1684250da7dd3842e85616608d6"
 S = "${WORKDIR}/git"
-LUA_VERSION = "5.3"
+LUA_VERSION = "5.4"
 
 inherit autotools pkgconfig
 

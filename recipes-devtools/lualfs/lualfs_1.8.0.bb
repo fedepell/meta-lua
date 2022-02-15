@@ -10,7 +10,7 @@ SRC_URI = "git://github.com/keplerproject/luafilesystem.git;branch=master;protoc
 
 SRCREV = "7c6e1b013caec0602ca4796df3b1d7253a2dd258"
 S = "${WORKDIR}/git"
-LUA_VERSION = "5.3"
+LUA_VERSION = "5.4"
 
 
 EXTRA_OEMAKE = "LUA_VERSION=${LUA_VERSION} PREFIX=${RECIPE_SYSROOT}/usr DESTDIR=${D}/usr"

@@ -9,7 +9,7 @@ SRC_URI = "git://github.com/ThePhD/sol2.git;branch=develop;protocol=https"
 
 SRCREV = "e09d2ffef8f4edb1e67aef881c6ad3c58a30c5d6"
 S = "${WORKDIR}/git"
-LUA_VERSION = "5.3"
+LUA_VERSION = "5.4"
 
 inherit pkgconfig cmake
 

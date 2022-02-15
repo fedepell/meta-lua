@@ -11,7 +11,7 @@ SRC_URI = "git://github.com/hleuwer/luasnmp.git;branch=master;protocol=https \
 
 SRCREV = "a377eb9d5ee203f81712434ea5355497d7f6d14d"
 S = "${WORKDIR}/git"
-LUA_VERSION = "5.3"
+LUA_VERSION = "5.4"
 
 inherit autotools pkgconfig
 

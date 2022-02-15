@@ -10,7 +10,7 @@ SRC_URI = "git://github.com/diegonehab/luasocket.git;branch=master;protocol=http
 
 SRCREV = "5b18e475f38fcf28429b1cc4b17baee3b9793a62"
 S = "${WORKDIR}/git"
-LUA_VERSION = "5.3"
+LUA_VERSION = "5.4"
 
 inherit autotools pkgconfig
 

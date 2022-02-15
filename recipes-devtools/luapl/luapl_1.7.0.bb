@@ -9,7 +9,7 @@ SRC_URI = "git://github.com/Tieske/Penlight.git;branch=master;protocol=https"
 
 SRCREV = "e469fa08b71055e1bc419f78754a1d830956e8d5"
 S = "${WORKDIR}/git"
-LUA_VERSION = "5.3"
+LUA_VERSION = "5.4"
 
 inherit autotools pkgconfig
 

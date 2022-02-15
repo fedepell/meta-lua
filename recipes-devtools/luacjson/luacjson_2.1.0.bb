@@ -10,7 +10,7 @@ SRC_URI = "git://github.com/mpx/lua-cjson.git;branch=master;protocol=https \
 
 SRCREV = "e8972ac754788d3ef10a57a36016d6c3e85ba20d"
 S = "${WORKDIR}/git"
-LUA_VERSION = "5.3"
+LUA_VERSION = "5.4"
 
 inherit autotools pkgconfig
 

@@ -16,7 +16,7 @@ SRC_URI = "git://github.com/keplerproject/luasql.git;branch=master;protocol=http
 
 SRCREV = "5496d60185db0c4578e8abe0c74343e99b799311"
 S = "${WORKDIR}/git"
-LUA_VERSION = "5.3"
+LUA_VERSION = "5.4"
 
 inherit autotools pkgconfig
 

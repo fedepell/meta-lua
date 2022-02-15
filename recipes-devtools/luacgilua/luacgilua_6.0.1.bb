@@ -11,7 +11,7 @@ SRC_URI = "git://github.com/keplerproject/cgilua.git;branch=master;protocol=http
 
 SRCREV = "239b83a6cafdf523132356d2e022b34fc384fd97"
 S = "${WORKDIR}/git"
-LUA_VERSION = "5.3"
+LUA_VERSION = "5.4"
 
 
 EXTRA_OEMAKE = "LUA_V=${LUA_VERSION} PREFIX=${D}/usr LUA_DIR=${D}/${datadir}/lua/${LUA_VERSION}"

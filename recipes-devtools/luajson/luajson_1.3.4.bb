@@ -11,7 +11,7 @@ SRC_URI = "git://github.com/harningt/luajson.git;branch=master;protocol=https \
 
 SRCREV = "b5e3c9bf73cb7908e246230e991d853aaa35552d"
 S = "${WORKDIR}/git"
-LUA_VERSION = "5.3"
+LUA_VERSION = "5.4"
 
 
 EXTRA_OEMAKE = "LUA_V=${LUA_VERSION} PREFIX=${D}/usr"

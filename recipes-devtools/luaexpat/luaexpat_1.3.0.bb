@@ -11,7 +11,7 @@ SRC_URI = "git://github.com/LuaDist/luaexpat.git;branch=master;protocol=https \
 
 SRCREV = "9bd5324edcdb5608ddfc2f6c2ba388189fe80a7f"
 S = "${WORKDIR}/git"
-LUA_VERSION = "5.3"
+LUA_VERSION = "5.4"
 
 inherit autotools pkgconfig
 

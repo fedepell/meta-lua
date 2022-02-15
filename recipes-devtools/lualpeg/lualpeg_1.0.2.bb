@@ -11,7 +11,7 @@ SRC_URI = "http://www.inf.puc-rio.br/~roberto/lpeg/lpeg-1.0.2.tar.gz \
 SRC_URI[sha256sum] = "48d66576051b6c78388faad09b70493093264588fcd0f258ddaab1cdd4a15ffe"
 
 S = "${WORKDIR}/lpeg-1.0.2"
-LUA_VERSION = "5.3"
+LUA_VERSION = "5.4"
 
 inherit autotools pkgconfig
 
