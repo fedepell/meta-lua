@@ -8,9 +8,9 @@ DEPENDS += "lua-native lua"
 SRC_URI = "git://github.com/tnodir/luasys.git;branch=master;protocol=https \
            file://0001-build-patch.patch"
 
-SRCREV = "5be1bced86ec175ba71e8f86ee5174a9a17b76bb"
+SRCREV = "4466bba1eeaeac5be4d896a7a4a4b9ddb9a04824"
 S = "${WORKDIR}/git"
-LUA_VERSION = "5.3"
+LUA_VERSION = "5.4"
 
 inherit autotools pkgconfig
 
