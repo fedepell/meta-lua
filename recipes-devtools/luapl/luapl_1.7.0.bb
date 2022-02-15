@@ -5,7 +5,7 @@ LIC_FILES_CHKSUM = "file://LICENSE.md;md5=0a2993b604147dcce1ea113b72b618cd"
 
 DEPENDS += "lua-native lua"
 
-SRC_URI = "git://github.com/Tieske/Penlight.git;branch=master"
+SRC_URI = "git://github.com/Tieske/Penlight.git;branch=master;protocol=https"
 
 SRCREV = "e469fa08b71055e1bc419f78754a1d830956e8d5"
 S = "${WORKDIR}/git"
@@ -25,4 +25,4 @@ do_install() {
     cp -r pl ${D}/${datadir}/lua/${LUA_VERSION}
 }
 
-FILES_${PN} = "${datadir}/lua/${LUA_VERSION}/pl"
+FILES:${PN} = "${datadir}/lua/${LUA_VERSION}/pl"

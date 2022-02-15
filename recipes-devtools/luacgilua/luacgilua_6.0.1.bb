@@ -4,9 +4,9 @@ HOMEPAGE = "https://github.com/keplerproject/cgilua"
 LIC_FILES_CHKSUM = "file://README.md;md5=9b58738744b5e5a8d569a84761e57ff9"
 
 DEPENDS += "lua-native lua"
-RDEPENDS_${PN} += "lualfs"
+RDEPENDS:${PN} += "lualfs"
 
-SRC_URI = "git://github.com/keplerproject/cgilua.git;branch=master \
+SRC_URI = "git://github.com/keplerproject/cgilua.git;branch=master;protocol=https \
            file://0001-build-patch.patch"
 
 SRCREV = "239b83a6cafdf523132356d2e022b34fc384fd97"
@@ -28,4 +28,4 @@ do_install() {
     install -m 755 src/launchers/cgilua.fcgi ${D}/${bindir}
 }
 
-FILES_${PN} = "${datadir}/lua/${LUA_VERSION}/ ${bindir}/cgilua.cgi ${bindir}/cgilua.fcgi"
+FILES:${PN} = "${datadir}/lua/${LUA_VERSION}/ ${bindir}/cgilua.cgi ${bindir}/cgilua.fcgi"

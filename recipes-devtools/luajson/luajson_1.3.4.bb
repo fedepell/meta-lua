@@ -4,9 +4,9 @@ HOMEPAGE = "https://github.com/harningt/luajson"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=ac0d9618a43915269abea2cb61c95cac"
 
 DEPENDS += "lua-native lua"
-RDEPENDS_${PN} += "lualpeg"
+RDEPENDS:${PN} += "lualpeg"
 
-SRC_URI = "git://github.com/harningt/luajson.git;branch=master \
+SRC_URI = "git://github.com/harningt/luajson.git;branch=master;protocol=https \
            file://0001-build-patch.patch"
 
 SRCREV = "b5e3c9bf73cb7908e246230e991d853aaa35552d"
@@ -27,4 +27,4 @@ do_install() {
     oe_runmake install
 }
 
-FILES_${PN} = "${datadir}/lua/${LUA_VERSION}/"
+FILES:${PN} = "${datadir}/lua/${LUA_VERSION}/"

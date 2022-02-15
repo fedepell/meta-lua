@@ -4,9 +4,9 @@ HOMEPAGE = "https://github.com/hleuwer/luasnmp"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=efa96ceb109a86d8ee112633f365bcc8"
 
 DEPENDS += "lua-native lua net-snmp"
-RDEPENDS_${PN} += "net-snmp-lib-netsnmp luapl"
+RDEPENDS:${PN} += "net-snmp-lib-netsnmp luapl"
 
-SRC_URI = "git://github.com/hleuwer/luasnmp.git;branch=master \
+SRC_URI = "git://github.com/hleuwer/luasnmp.git;branch=master;protocol=https \
            file://0001-build-patch.patch"
 
 SRCREV = "a377eb9d5ee203f81712434ea5355497d7f6d14d"
@@ -30,4 +30,4 @@ do_install() {
     oe_runmake install
 }
 
-FILES_${PN} = "${datadir}/lua/${LUA_VERSION} ${libdir}/lua/${LUA_VERSION}"
+FILES:${PN} = "${datadir}/lua/${LUA_VERSION} ${libdir}/lua/${LUA_VERSION}"

@@ -16,7 +16,7 @@ LUA_VERSION = "5.3"
 inherit autotools pkgconfig
 
 EXTRA_OEMAKE = "-f makefile LUA_V=${LUA_VERSION} LUADIR=${RECIPE_SYSROOT}/usr/lua"
-CFLAGS_append = " -I${LUADIR} -fPIC"
+CFLAGS:append = " -I${LUADIR} -fPIC"
 
 do_configure() {
 }
@@ -33,4 +33,4 @@ do_install() {
     install -m 644 ${S}/re.lua ${D}/${datadir}/lua/${LUA_VERSION}
 }
 
-FILES_${PN} = "${libdir}/lua/${LUA_VERSION}/lpeg.so ${datadir}/lua/${LUA_VERSION}/re.lua"
+FILES:${PN} = "${libdir}/lua/${LUA_VERSION}/lpeg.so ${datadir}/lua/${LUA_VERSION}/re.lua"

@@ -4,9 +4,9 @@ HOMEPAGE = "https://github.com/LuaDist/luaexpat"
 LIC_FILES_CHKSUM = "file://doc/us/license.html;md5=9e100888b4a39ac08c37fb127fefc458"
 
 DEPENDS += "lua-native lua expat"
-RDEPENDS_${PN} += "expat"
+RDEPENDS:${PN} += "expat"
 
-SRC_URI = "git://github.com/LuaDist/luaexpat.git;branch=master \
+SRC_URI = "git://github.com/LuaDist/luaexpat.git;branch=master;protocol=https \
            file://0001-build-patch.patch"
 
 SRCREV = "9bd5324edcdb5608ddfc2f6c2ba388189fe80a7f"
@@ -30,4 +30,4 @@ do_install() {
     oe_runmake install
 }
 
-FILES_${PN} = "${datadir}/lua/${LUA_VERSION} ${libdir}/lua/${LUA_VERSION}"
+FILES:${PN} = "${datadir}/lua/${LUA_VERSION} ${libdir}/lua/${LUA_VERSION}"

@@ -5,7 +5,7 @@ LIC_FILES_CHKSUM = "file://COPYRIGHT;md5=eb20c1e17a9cbfb068bd4d63a5d56544"
 
 DEPENDS += "lua-native lua"
 
-SRC_URI = "git://github.com/tnodir/luasys.git;branch=master \
+SRC_URI = "git://github.com/tnodir/luasys.git;branch=master;protocol=https \
            file://0001-build-patch.patch"
 
 SRCREV = "5be1bced86ec175ba71e8f86ee5174a9a17b76bb"
@@ -15,7 +15,7 @@ LUA_VERSION = "5.3"
 inherit autotools pkgconfig
 
 EXTRA_OEMAKE = "LUA_V=${LUA_VERSION}"
-CFLAGS_append = " -I${RECIPE_SYSROOT}/usr/include -fPIC"
+CFLAGS:append = " -I${RECIPE_SYSROOT}/usr/include -fPIC"
 
 do_configure() {
 }
@@ -30,6 +30,6 @@ do_install() {
     install -m 644 ${S}/src/sys.so ${D}/${libdir}/lua/${LUA_VERSION}
 }
 
-FILES_${PN} = "${libdir}/lua/${LUA_VERSION}/sys.so"
+FILES:${PN} = "${libdir}/lua/${LUA_VERSION}/sys.so"
 
-INSANE_SKIP_${PN} += "ldflags"
+INSANE_SKIP:${PN} += "ldflags"

@@ -8,10 +8,10 @@ DEPENDS += "lua-native lua mysql5 sqlite3"
 PACKAGES =+ "luasql-mysql luasql-sqlite3"
 PROVIDES =+ "luasql-mysql luasql-sqlite3"
 
-RDEPENDS_${PN}-mysql += "libmysqlclient"
-RDEPENDS_${PN}-sqlite3 += "libsqlite3"
+RDEPENDS:${PN}-mysql += "libmysqlclient"
+RDEPENDS:${PN}-sqlite3 += "libsqlite3"
 
-SRC_URI = "git://github.com/keplerproject/luasql.git;branch=master \
+SRC_URI = "git://github.com/keplerproject/luasql.git;branch=master;protocol=https \
            file://0001-build-patch.patch"
 
 SRCREV = "5496d60185db0c4578e8abe0c74343e99b799311"
@@ -40,8 +40,8 @@ do_install() {
     oe_runmake install
 }
 
-FILES_${PN}-mysql = "${libdir}/lua/${LUA_VERSION}/luasql/mysql.so"
-FILES_${PN}-sqlite3 = "${libdir}/lua/${LUA_VERSION}/luasql/sqlite3.so"
+FILES:${PN}-mysql = "${libdir}/lua/${LUA_VERSION}/luasql/mysql.so"
+FILES:${PN}-sqlite3 = "${libdir}/lua/${LUA_VERSION}/luasql/sqlite3.so"
 
-INSANE_SKIP_${PN}-mysql += "ldflags"
-INSANE_SKIP_${PN}-sqlite3 += "ldflags"
+INSANE_SKIP:${PN}-mysql += "ldflags"
+INSANE_SKIP:${PN}-sqlite3 += "ldflags"

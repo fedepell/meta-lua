@@ -5,7 +5,7 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=ab6706baf6d39a6b0fa2613a3b0831e7"
 
 DEPENDS += "lua-native lua"
 
-SRC_URI = "git://github.com/diegonehab/luasocket.git;branch=master \
+SRC_URI = "git://github.com/diegonehab/luasocket.git;branch=master;protocol=https \
            file://0001-build-patch.patch"
 
 SRCREV = "5b18e475f38fcf28429b1cc4b17baee3b9793a62"
@@ -26,4 +26,4 @@ do_install() {
     oe_runmake install-unix
 }
 
-FILES_${PN} = "${datadir}/lua/${LUA_VERSION} ${libdir}/lua/${LUA_VERSION}"
+FILES:${PN} = "${datadir}/lua/${LUA_VERSION} ${libdir}/lua/${LUA_VERSION}"

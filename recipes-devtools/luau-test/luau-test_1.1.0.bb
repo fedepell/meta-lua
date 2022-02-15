@@ -5,7 +5,7 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=b4c5dfe141d2ae53dc1cbd5587792303"
 
 DEPENDS += "lua-native lua"
 
-SRC_URI = "git://github.com/IUdalov/u-test;branch=master"
+SRC_URI = "git://github.com/IUdalov/u-test;branch=master;protocol=https"
 
 SRCREV = "113259fd238ec1684250da7dd3842e85616608d6"
 S = "${WORKDIR}/git"
@@ -24,4 +24,4 @@ do_install() {
     install -m 644 ${S}/u-test.lua ${D}/${datadir}/lua/${LUA_VERSION}
 }
 
-FILES_${PN} = "${datadir}/lua/${LUA_VERSION}/u-test.lua"
+FILES:${PN} = "${datadir}/lua/${LUA_VERSION}/u-test.lua"
