@@ -6,7 +6,7 @@ diff -ruN a/Makefile b/Makefile
  
  ##### Build defaults #####
 -LUA_VERSION =       5.3
-+LUA_VERSION ?=       5.3
++LUA_VERSION ?=       5.4
  TARGET =            cjson.so
 -PREFIX =            /usr/local
 +PREFIX ?=            /usr/local
