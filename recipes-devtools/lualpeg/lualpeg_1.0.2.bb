@@ -15,7 +15,7 @@ LUA_VERSION = "5.4"
 
 inherit autotools pkgconfig
 
-EXTRA_OEMAKE = "-f makefile LUA_V=${LUA_VERSION} LUADIR=${RECIPE_SYSROOT}/usr/lua"
+EXTRA_OEMAKE = "-f makefile LUA_V=${LUA_VERSION} LUADIR=${RECIPE_SYSROOT}/usr/lua 'CC=${CC} ${LDFLAGS}'"
 CFLAGS:append = " -I${LUADIR} -fPIC"
 
 do_configure() {
